@@ -1,0 +1,55 @@
+<div class="container mt-4">
+  <div class="row">
+    <div>
+      <h1 class="text-info">
+        {{title}}
+      </h1>
+      <p>
+        Welcome to
+        {{title}}
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <form method="POST">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Song link"
+            aria-label="Song link"
+            aria-describedby="button-addon2"
+            id="song-link"
+            name="songlink"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-info" type="submit" id="button-addon2">
+              Search
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  {{#if song}}
+    <div class="row">
+      <div class="container-fluid">
+        <a href="{{song.url}}">
+          <h3 class="text-info">
+            {{song.title}}
+          </h3>
+          <br />
+        </a>
+        <span style="white-space: pre-line">
+          {{song.lyrics}}
+        </span>
+      </div>
+    </div>
+  {{/if}}
+</div>
+<script>
+  if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
